@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ch-CN" manifest="manifest.appcache">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Open Source Library,Quaestio,library,books,journals">
+    <meta name="description" content="Open Source Library is an online open library developed by Quaestio Studio, free for everyone in the world.">
+    <title>Open Source Library</title>
+    <link rel="icon" href="IMG/logo-icon1.png">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="JS/jquery-3.6.0.min.js"></script>
+    <script src="JS/jquery.cookie.js"></script>
+    <script src="JS/basic_function.js"></script>
+</head>
+<body>
+
+    <div class="container-fluid" id="ad">
+        &lt;ADVERTISEMENT&gt;
+    </div>
+
+    <div class="container-fluid" id="headerBox">
+        <a href="index.html" name="HomePage">
+            <img src="IMG/logo-christmas.png" id="logo" title="Open Source Library" alt="Open Source Library"/>
+        </a>
+        <a href="account.html">
+            <button id="loginButton">
+                Login
+            </button>
+        </a>
+    </div>
+
+    <ul class="nav justify-content-center" id="wideNav">
+        <button id="searchIcon" onclick="mini_search()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg>
+        </button>
+        <div id="miniSearchHolder">
+            <input type="text" placeholder="Search" id="miniSearch" autocomplete="off" />
+        </div>
+        <li class="nav-item_s">
+            <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="news.html">News</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="search.html">Search</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="library.html">Library</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="account.html">Account</a>
+        </li>
+        <a href="javascript:;">
+            <img src="IMG/light.png" id="light" title="Lighting_Mode" alt="Light" />
+        </a>
+    </ul>
+
+    <div id="mobileNav">
+
+        <div id="mobileLogoBox">
+            <a href="index.html" name="HomePage"><img src="IMG/logo.png" id="logo" title="Open Source Library" alt="Open Source Library"/></a>
+        </div>
+
+        <div id="hiddenLoginBox">
+            <a href="account.html">
+                <button id="hiddenLoginButton">
+                    Login
+                </button>
+            </a>
+            <svg id="plus" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16" onclick="show_navpage(this)">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+            <div id="hiddenNavblock">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <div>
+                                Home
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="news.html">
+                            <div>
+                                News
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="search.html">
+                            <div>
+                                Search
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="library.html">
+                            <div>
+                                Library
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="account.html">
+                            <div>
+                                Account
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container-xxl" id="pageTop">
+        <div class="col-lg-8 col-md-12" id="titleNews">
+            <div id="titleNews_img">
+                <img src="IMG/_2021112_toc_webb.jpg" class="backgroundimg" alt="James Webb telescope"/>
+            </div>
+            <div id="footBlackBox">
+                <h6>Nov 11 2021</h6>
+                <h2>TITLE NEWS</h2>
+                <a href="news.html" class="link">
+                    <p>
+                        On the launch pad at last, NASA’s Webb telescope will probe first stars and weather on alien worlds.
+                    </p>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-12" id="sideNews">
+            <div class="col-md-6" id="sideNews_content1">
+                <img src="IMG/_20210930_on_baylorfiringsupdate.jpg" class="backgroundimg" alt="BCM"/>
+            </div>
+            <div id="footWhiteBox_1">
+                <span class="feature">FEATURE NEWS</span> | 
+                <span class="date">Oct 1 2021</span>
+                <a href="news.html" class="link">
+                    <p>
+                        Did Baylor fire two medical school scientists because their spouses worked in China?
+                    </p>
+                </a>
+            </div>
+            <div class="col-md-6" id="sideNews_content2">
+                <img src="IMG/storybook.jpg" class="backgroundimg" alt="storybook to help children get through covid-19"/>
+            </div>
+            <div id="footWhiteBox_2">
+                <span class="feature">FEATURE NEWS</span> | 
+                <span class="date">Oct 1 2021</span>
+                <a href="news.html" class="link">
+                    <p>
+                        Storybook to help children get through covid-19.
+                    </p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container-xxl">
+        <div class="row" id="row1">
+            <div class="col-lg-5 col-sm-12">
+                <h3>
+                    GLOBAL
+                </h3>
+                <a href="news.html" class="link">
+                    <p>
+                        Situation of Covid-19 continues to deteriorate in countries like India, the UK, and the US.
+                    </p>
+                </a>
+            </div>
+            <div class="col-lg-3 col-sm-12 col-md-6">
+                <h3>
+                    GLOBAL
+                </h3>
+                <a href="news.html" class="link">
+                    <p>
+                        Microsoft’s million-tonne CO2-removal purchase — lessons for net zero.
+                    </p>
+                </a>
+            </div>
+            <div class="col-lg-3 col-sm-12 col-md-6">
+                <h3>
+                    GLOBAL
+                </h3>
+                <a href="news.html" class="link">
+                    <p>
+                        Delayed global warming could reduce human exposure to cyclones.
+                    </p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl" id="moreNews">
+        <h2>
+            MORE NEWS & EDITORIAL
+        </h2>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="rowBox">
+                    <div class="innerBox">
+                        <h4>
+                            Commercial Tech
+                        </h4>
+                        <p>
+                            Apple's new silicons are set to be the new standard for ARM chips. With their powerful M1 family chipsets, will Intel and AMD be able to compete with the company?
+                        </p>
+                    </div>
+                    <button>
+                        Read More
+                    </button>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="rowBox">
+                    <div class="innerBox">
+                        <h4>
+                            Commercial Tech
+                        </h4>
+                        <p>
+                            Intel announced their 12th-generation Intel Core processor, the i5, i7 and i9, beating AMD's latest flagship desktop processors.
+                        </p>
+                    </div>
+                    <button>
+                        Read More
+                    </button>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="rowBox">
+                    <div class="innerBox">
+                        <h4>
+                            Editorial
+                        </h4>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chat-quote-fill" viewBox="0 0 16 16">
+                            <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM7.194 6.766a1.688 1.688 0 0 0-.227-.272 1.467 1.467 0 0 0-.469-.324l-.008-.004A1.785 1.785 0 0 0 5.734 6C4.776 6 4 6.746 4 7.667c0 .92.776 1.666 1.734 1.666.343 0 .662-.095.931-.26-.137.389-.39.804-.81 1.22a.405.405 0 0 0 .011.59c.173.16.447.155.614-.01 1.334-1.329 1.37-2.758.941-3.706a2.461 2.461 0 0 0-.227-.4zM11 9.073c-.136.389-.39.804-.81 1.22a.405.405 0 0 0 .012.59c.172.16.446.155.613-.01 1.334-1.329 1.37-2.758.942-3.706a2.466 2.466 0 0 0-.228-.4 1.686 1.686 0 0 0-.227-.273 1.466 1.466 0 0 0-.469-.324l-.008-.004A1.785 1.785 0 0 0 10.07 6c-.957 0-1.734.746-1.734 1.667 0 .92.777 1.666 1.734 1.666.343 0 .662-.095.931-.26z"/>
+                        </svg>
+                        <p>
+                            Big supporter of our website? Join our non-profit editor group, let your voice be heard, and let your ideas be shared.
+                        </p>
+                    </div>
+                    <button>
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl" id="covid-19">
+        <div class="col-lg-12">
+            <img src="IMG/covid-banner.jpg" class="backgroundimg_still" alt="covid-banner"/>
+        </div>
+        <div class="col-lg-10 col-md-12" id="covidMessage">
+            <h2>
+                WHO Covid-19 Report
+            </h2>
+            <iframe marginwidth="0" framespacing="0" marginheight="0" frameborder="0" width='100%' height="850px" srcolling="no" src="https://covid19.who.int/"></iframe>
+            <p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                    <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                </svg>
+                This report is based on the data released by WHO.
+            </p>
+        </div>
+    </div>
+
+    <div class="container-xxl" id="booklist">
+        <h2>
+            OSL Booklist of the Month
+        </h2>
+        <div class="row" id="shelf1">
+            <div class="col-lg-2 col-md-3 col-sm-12">
+                <a href="library.html" name="Books/Programming in C.pdf" onclick="data_transfer(this)">
+                    <img src="IMG/IMG_3327.jpg" class="bookimg" title="Programming in C" alt="Progamming in C" height="250px"/>
+                    <div class="description1">
+                        Programming in C
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-12">
+                <a href="library.html" name="Books/python编程从入门到实践第2版.pdf" onclick="data_transfer(this)">
+                    <img src="IMG/IMG_3328.PNG" class="bookimg" title="python编程从入门到实践第2版" alt="python编程从入门到实践第2版" />
+                    <div class="description1">
+                        Python编程
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-12">
+                <a href="library.html" name="Books/dictionary.pdf" onclick="data_transfer(this)">
+                    <img src="IMG/dictionary.png" class="bookimg" title="Oxford dictionary" alt="Oxford dictionary" />
+                    <div class="description1">
+                        Oxford Dictionary
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-12">
+                <img src="IMG/little_prince.jfif" class="bookimg" title="Little Prince" alt="Little Prince" />
+                <div class="description1">
+                    Little Prince
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-12">
+                <img src="IMG/harry potter.jpg" class="bookimg" title="Harry Potter" alt="Harry Potter" />
+                <div class="description1">
+                    Harry Potter
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl" id="journalList">
+        <h2>
+            OSL Journal list of the Month
+        </h2>
+        <div class="row" id="shelf2">
+            <div class="col-lg-2 col-md-3 col-sm-12">
+                <img src="IMG/science1.png" class="bookimg" title="Science issue-6570" alt="Science issue-6570" />
+                <div class="description2">
+                    Science issue-6570
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-12">
+                <img src="IMG/nature2.png" class="bookimg" title="Nature issue-7885" alt="Nature issue-7885" />
+                <div class="description2">
+                    Nature issue-7885
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-12">
+                <img src="IMG/science2.png" class="bookimg" title="Science issue-6569" alt="Science issue-6569" />
+                <div class="description2">
+                    Science issue-6569
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-12">
+                <img src="IMG/nature1.png" class="bookimg" title="Nature issue-7884" alt="Nature issue-7884" />
+                <div class="description2">
+                    Nature issue-7884
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-12">
+                <img src="IMG/science3.png" class="bookimg" title="Science issue-6568" alt="Science issue-6568" />
+                <div class="description2">
+                    Science issue-6568
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl" id="alert-sust">
+        <div class="row">
+            <div class="col-lg-6" id="alert">
+                <div id="policy_content">
+                    <h1><i class="fas fa-lock"></i></h1>
+                    <h2>Policy Alert</h2>
+                    <br />
+                    <p>
+                        At Quaestio, we value your privacy greatly. 
+                        Cookies and Local storage are used in this website.
+                        For more information, please view our latest 
+                        <a href="policy.html" class="link_0">Policy Alert</a>.
+                    </p>
+                </div>
+                <div>
+                    <a href="javascript:;">
+                        <button id="closebox">
+                            Dismiss
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <!-- <div class="col-lg-6">
+            </div> -->
+        </div>
+    </div>
+
+    <div class="container-fluid" id="logoBar">
+        <img src="IMG/footerlogo.png" id="osl_logo" />
+    </div>
+
+    <div class="footer__sitemap" id="footer">
+
+        <div id="footernav">
+            <div class="navblock">
+                <ul>
+                    <li>
+                        <div class="title_underline">
+                            <h3>
+                                Home
+                            </h3>
+                            <div class="title_underline_2"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="index.html#news" class="link_1">
+                            News of This Week
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#books" class="link_1">
+                            Booklist of This Week
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#journals" class="link_1">
+                            Journal list of This Week
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navblock">
+                <ul>
+                    <li>
+                        <div class="title_underline">
+                            <h3>
+                                News
+                            </h3>
+                            <div class="title_underline_2"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="news.html#globe" class="link_1">
+                            Around the Globe
+                        </a>
+                    </li>
+                    <li>
+                        <a href="news.html#academia" class="link_1">
+                            This Week in Academia
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navblock">
+                <ul>
+                    <li>
+                        <div class="title_underline">
+                            <h3>
+                                Search
+                            </h3>
+                            <div class="title_underline_2"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="search.html#search1" class="link_1">
+                            Search Library
+                        </a>
+                    </li>
+                    <li>
+                        <a href="search.html#hot" class="link_1">
+                            Hottest Requests
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navblock">
+                <ul>
+                    <li>
+                        <div class="title_underline">
+                            <h3>
+                                Library
+                            </h3>
+                            <div class="title_underline_2"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="library.html#basket" class="link_1">
+                            My Basket
+                        </a>
+                    </li>
+                    <li>
+                        <a href="library.html#read" class="link_1">
+                            Read Area
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navblock">
+                <ul>
+                    <li>
+                        <div class="title_underline">
+                            <h3>
+                                Account
+                            </h3>
+                            <div class="title_underline_2"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="account.html" class="link_1">
+                            Login
+                        </a>
+                    </li>
+                    <li>
+                        <a href="register.html" class="link_1">
+                            Register
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="info">
+            <br />
+            <img src="IMG/footerquaestio.png" width="150px" title="Quaestio" alt="Quaestio" />
+            <br />
+            <br />
+            <a href="about.html" class="link_1">About Us</a> / Go to : <a href="https://47.96.82.146" class="link_2" target="_blank">Quaestio</a>
+            <br />
+            This website is a non-commercial product of Quaestio. 
+            Created by Yuelin Xin, Some Rights Reserved. 
+            Inspired by the work of <a href="https://www.science.org" target="_blank">Science | AAAS</a>. 
+            Powered by <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>.
+            <br />
+            &copy;
+            <span id="quaestio">
+                Quaestio Studio
+            </span>
+            2021
+            <br />
+            <br />
+            <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a> | <a href="#">Accessibility</a>
+            <div id="icon_box">
+                <br />
+                <span>Follow Us</span>
+                <br />
+                <a href="https://github.com/YuelinXin" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                </a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-reddit" viewBox="0 0 16 16">
+                    <path d="M6.167 8a.831.831 0 0 0-.83.83c0 .459.372.84.83.831a.831.831 0 0 0 0-1.661zm1.843 3.647c.315 0 1.403-.038 1.976-.611a.232.232 0 0 0 0-.306.213.213 0 0 0-.306 0c-.353.363-1.126.487-1.67.487-.545 0-1.308-.124-1.671-.487a.213.213 0 0 0-.306 0 .213.213 0 0 0 0 .306c.564.563 1.652.61 1.977.61zm.992-2.807c0 .458.373.83.831.83.458 0 .83-.381.83-.83a.831.831 0 0 0-1.66 0z"/>
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.828-1.165c-.315 0-.602.124-.812.325-.801-.573-1.9-.945-3.121-.993l.534-2.501 1.738.372a.83.83 0 1 0 .83-.869.83.83 0 0 0-.744.468l-1.938-.41a.203.203 0 0 0-.153.028.186.186 0 0 0-.086.134l-.592 2.788c-1.24.038-2.358.41-3.17.992-.21-.2-.496-.324-.81-.324a1.163 1.163 0 0 0-.478 2.224c-.02.115-.029.23-.029.353 0 1.795 2.091 3.256 4.669 3.256 2.577 0 4.668-1.451 4.668-3.256 0-.114-.01-.238-.029-.353.401-.181.688-.592.688-1.069 0-.65-.525-1.165-1.165-1.165z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"/>
+                </svg>
+                <br /><br /><br />
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+</html>
+
+<!-- All news and news images in this webpage source from: www.science.org , www.who.int and www.nature.com -->
+
+<!-- goals to achieve: 
+    1.搜索页面站内搜索功能
+    2.账户页面登陆
+    3.账户页面注册
+    4.CORS
+    5.页面设计优化
+    6.后端搭建-->

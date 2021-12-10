@@ -1,0 +1,13 @@
+CACHE MANIFEST
+# VERSION 1.0.0
+
+CACHE:
+/index.html
+/style.css
+/basic_function.js
+
+NETWORK:
+*
+
+FALLBACK:
+./error.html

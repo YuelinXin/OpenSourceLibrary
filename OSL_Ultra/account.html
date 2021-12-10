@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html id="accountHTML" lang="ch-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Open Source Library,Quaestio,library,books,journals">
+    <meta name="description" content="Open Source Library is an online open library developed by Quaestio Studio, free for everyone in the world.">
+    <title>Account | OSL</title>
+    <link rel="icon" href="IMG/logo-icon1.png">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="JS/jquery-3.6.0.min.js"></script>
+    <script src="JS/jquery.cookie.js"></script>
+    <script src="JS/basic_function.js"></script>
+</head>
+<body id="accountBody">
+
+    <!-- <div id="topBanner">
+        <a href="javascript:history.go(-1);">
+            <svg id="back" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+            </svg>
+        </a>
+    </div> -->
+
+    <div id="contentHolder">
+        <div id="med">
+            <h2>
+                <span><i>Welcome</i></span>
+                <span><i>to</i></span>
+                <span><i>OSL</i></span>
+            </h2>
+            <p>
+                <span><i>Discover</i></span>
+                <span><i>the</i></span>
+                <span><i>Wonderous</i></span>
+                <span><i>World</i></span>
+                <span><i>of</i></span>
+                <span><i>Science</i></span>
+                <span><i>&</i></span>
+                <span><i>Technology</i></span>
+            </p>
+        </div>
+    
+        <div id="loginBox">
+            <form method="post" action="no_result.html">
+                <input type="text" placeholder="OSL Account" required="required" autocomplete="off" id="accountId" />
+                <br />
+                <input type="password" placeholder="Password" required="required" id="password" />
+                <br />
+                <input type="submit" value="GO" id="loginButton_submit" />
+            </form>
+        </div>
+    
+        <div id="signUpBox">
+            <form method="post" action="no_result.html">
+                <input type="text" placeholder="Account Name" required="required" autocomplete="off" id="accountId" />
+                <br />
+                <input type="password" placeholder="Password" required="required" id="password" />
+                <br />
+                <input type="password" placeholder="Confirm Password" required="required" id="password" />
+                <br />
+                <input type="submit" value="Join" id="loginButton_submit" />
+            </form>
+        </div>
+    
+        <a href="javascript:;" onclick="gotoSignUp();">
+            <div id="gotoSignUp">
+                <h2>
+                    Sign Up<br />to OSL
+                </h2>
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                </svg>
+            </div>
+        </a>
+        <a href="javascript:;" onclick="gotoLogin();">
+            <div id="gotoLogin">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                </svg>
+                <h2>
+                    Login<br />to OSL
+                </h2>
+            </div>
+        </a>
+
+        <a href="javascript:;" onclick="mobileSwitch()" id="mobileSwitch">
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                    <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+                    <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+                </svg>
+                <h5 id="hint">
+                    Sign Up to OSL
+                </h5>
+            </div>
+        </a>
+    </div>
+
+</body>
+</html>

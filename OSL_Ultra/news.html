@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="ch-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Open Source Library,Quaestio,library,books,journals">
+    <meta name="description" content="Open Source Library is an online open library developed by Quaestio Studio, free for everyone in the world.">
+    <title>News | OSL</title>
+    <link rel="icon" href="IMG/logo-icon1.png">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="JS/jquery-3.6.0.min.js"></script>
+    <script src="JS/jquery.cookie.js"></script>
+    <script src="JS/basic_function.js"></script>
+</head>
+<body>
+    
+    <div class="container-fluid" id="ad">
+        &lt;ADVERTISEMENT&gt;
+    </div>
+
+    <div class="container-fluid" id="headerBox">
+        <a href="index.html" name="HomePage">
+            <img src="IMG/logo-christmas.png" id="logo" title="Open Source Library" alt="Open Source Library"/>
+        </a>
+        <a href="account.html">
+            <button id="loginButton">
+                Login
+            </button>
+        </a>
+    </div>
+
+    <ul class="nav justify-content-center" id="wideNav">
+        <button id="searchIcon" onclick="mini_search()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg>
+        </button>
+        <div id="miniSearchHolder">
+            <input type="text" placeholder="Search" id="miniSearch" autocomplete="off" />
+        </div>
+        <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item_s">
+            <a class="nav-link" href="news.html">News</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="search.html">Search</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="library.html">Library</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="account.html">Account</a>
+        </li>
+        <a href="javascript:;">
+            <img src="IMG/light.png" id="light" title="Lighting_Mode" alt="Light" />
+        </a>
+    </ul>
+
+    <div id="mobileNav">
+
+        <div id="mobileLogoBox">
+            <a href="index.html" name="HomePage"><img src="IMG/logo.png" id="logo" title="Open Source Library" alt="Open Source Library"/></a>
+        </div>
+
+        <div id="hiddenLoginBox">
+            <a href="account.html">
+                <button id="hiddenLoginButton">
+                    Login
+                </button>
+            </a>
+            <svg id="plus" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16" onclick="show_navpage(this)">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+            <div id="hiddenNavblock">
+                <ul> 
+                    <li>
+                        <a href="news.html">
+                            <div>
+                                News
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html">
+                            <div>
+                                Home
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="search.html">
+                            <div>
+                                Search
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="library.html">
+                            <div>
+                                Library
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="account.html">
+                            <div>
+                                Account
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container-xxl" id="titleNewsBox">
+        <div class="col-12">
+            <img src="IMG/_2021112_toc_webb.jpg" class="backgroundimg_still" />
+            <div id="blackCover">
+                <h1>
+                    TITLE NEWS
+                </h1>
+                <p>
+                    On the launch pad at last, NASA’s Webb telescope will probe first stars and weather on alien worlds.
+                </p>
+                <div id="laterBox">
+                    <h3>
+                        11 Nov 2021
+                    </h3>
+                    <br />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-xxl" id="newspContainer">
+        <div class="col-lg-8" id="newsp">
+            <div id="relatedEvents">
+                <h5>
+                    Related Events&nbsp;&nbsp;
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-right-square" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.854 8.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707l-4.096 4.096z"/>
+                        </svg>
+                    </a>
+                </h5>
+                <button>
+                    James Webb Telescope Launch at 18th Dec 2021
+                </button>
+                <button>
+                    NASA Launch Events
+                </button>
+                <button>
+                    Webb Telescope Delay
+                </button>
+            </div>
+            <br />
+            <input type="checkbox" id="readMore" />
+            <label for="readMore"></label>
+            <div id="content">
+                <p id="p1">
+                    The telescope Galileo Galilei first pointed at the heavens in 1609 had a lens no wider than a slice of cucumber. Yet with that modest tool, he saw the rings of Saturn, the moons of Jupiter—and sparked a scientific revolution that toppled Earth as the center of the cosmos. Astronomy has come a long way since then. But when the James Webb Space Telescope launches in December, with a 6.5-meter mirror that would tower over Galileo himself, it will open views of the universe’s first stars and galaxies, probe the atmospheres of planets around other stars—and launch another revolution. “James Webb will blow the lid off everything,” says exoplanet hunter Sasha Hinkley of the University of Exeter.
+                </p>
+                <p>
+                    Webb’s mirror has more than five times the light-gathering power of the 31-year-old Hubble Space Telescope. Unlike Hubble, Webb will work in the infrared, allowing it to see the heavily “redshifted” light of distant objects and peer through clouds of obscuring dust. It will also be able to sift exoplanet atmospheres for gases whose infrared fingerprints are mostly off-limits to ground-based observatories. “We’ve never looked at the universe at these wavelengths and these depths and resolution,” says Steve Finkelstein of the University of Texas, Austin, who will lead several projects looking at distant galaxies in Webb’s first year. “I think we’ll be in for some surprises.”
+                </p>
+                <p>
+                    More than 1000 teams of astronomers from across the globe applied for time on Webb in its first year, and 286 got lucky. They will task the telescope with a range of inquiries: looking for ice-covered oceans on Uranus’s 27 moons, searching for elusive medium-size black holes, and resolving conflicting measurements of the expansion rate of the universe. But broadly speaking, they will use Webb to pursue two overriding themes, at opposite extremes of time and distance: the early universe and nearby planetary systems.
+                </p>
+                <p>
+                    Researchers want to glimpse the universe’s gargantuan first stars and study how messy clumps of them evolved into orderly, spiral galaxies. They want to witness the evolution of the giant black holes at the centers of many galaxies and chart their role in clearing a fog of neutral hydrogen gas that filled the early universe. In the nearby universe, Webb is expected to transform our knowledge of how gas and dust around young stars coalesce into planets, what conditions on those worlds are like, and whether they provide a welcoming habitat for life.
+                </p>
+                <p>
+                    It is a dream telescope, and one that has been many years—and $10 billion—in the making. Early on, Webb was expected to launch in 2011 for less than $2 billion. But the complexity of new technologies such as the segmented mirror and the cryocoolers that keep instruments cold enough to see far-infrared wavelengths led to delays and inflated costs. After Congress threatened to cancel the project in 2011, NASA set a new schedule and, for a while, kept to it. But more delays came when prime contractor Northrop Grumman discovered faulty welds, incorrect lubricants, missing bolts, and tears in the telescope’s giant sunshield.
+                </p>
+                <p>
+                    Now, all that is fixed, but one last hurdle remains. In September, engineers in California packed Webb up in an environmentally controlled shipping container and sent it by sea to French Guiana, home to Europe’s spaceport. On 18 December, Webb will endure the roar and rattle of a 27-minute ride to orbit on a European Ariane 5 rocket, its folded-up mirror just barely fitting inside the fairing.
+                </p>
+                <p>
+                    A month of critical maneuvers will follow as the telescope cruises deeper into space. “It’s 30 days of terror,” says Garth Illingworth of the University of California, Santa Cruz (UCSC), who was one of the project’s early architects. As soon as it’s in space, Webb will deploy its solar array and then, 2 hours later, its communications antenna. On day 3, as it passes the Moon, its huge sunshield will begin to unfurl. By day 11, the mirrors will start to unfold and swing into place. Finally, after 29 days, Webb’s boosters will make a final burn to put it in orbit around L2, a gravitational balance point 1.5 million kilometers from Earth. Unlike Hubble, Webb will be too far away to be repaired by visiting astronauts. It must work flawlessly straight out of the box.
+                </p>
+                <p>
+                    Planning for Webb began as far back as 1989, before Hubble had even left the ground. It was originally nicknamed the First Light Machine, recalls Marcia Rieke, an astronomer at the University of Arizona who served on the project’s working group in the late 1990s. The goal was to peer back to the universe’s infancy.
+                </p>
+                <p>
+                    Ground-based telescopes at the time could barely see halfway back across the 13.8-billion-year history of the universe. Hubble, with no atmosphere to blur its view, could take astronomers much closer to the beginning. In its first “deep-field” exposure, in 1995, it stared at a seemingly empty patch of sky in Ursa Major for 140 hours. Almost every one of the 3000 objects that popped into view was a distant galaxy, shining from times as early as 1.5 billion years after the big bang.
+                </p>
+                <p>
+                    Subsequent exposures went even deeper in time. Astronomers assumed the number of galaxies would fall off sharply at those early times because gravity had not yet pulled clouds of gas into stars, let alone assembled stars into galaxies. But Hubble showed the galaxies were there, albeit in dwindling numbers. In 2016, researchers using Hubble data found a small galaxy, dubbed GN-z11, that dated, astonishingly, from a time when the universe was just 400 million years old. “We had no idea you could see objects at that time,” Illingworth says.
+                </p>
+                <h6>
+                    Author: <a href="https://www.twitter.com/@danclery" target="_blank" class="link"><span style="font-style: italic;">Daniel Clery</span></a>
+                </h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl" id="featureNews">
+        <h2>
+            FEATURE NEWS
+        </h2>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="newsBox">
+                    <div class="newsImg">
+                        <img src="IMG/_20210930_on_baylorfiringsupdate.jpg" class="backgroundimg_still" alt="BCM"/>
+                    </div>
+                    <span class="date">Oct 1 2021</span>
+                    <a href="#" class="link">
+                        <p>
+                            Did Baylor fire two medical school scientists because their spouses worked in China?
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="newsBox">
+                    <div class="newsImg">
+                        <img src="IMG/storybook.jpg" class="backgroundimg_still" alt="storybook to help children get through covid-19"/>
+                    </div>
+                    <span class="date">Oct 1 2021</span>
+                    <a href="#" class="link">
+                        <p>
+                            Storybook to help children get through covid-19.
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="newsBox">
+                    <div class="newsImg">
+                        <img src="IMG/_20210929_nid_livingcovid.jpg" class="backgroundimg_still" alt="picture of denmark crowds"/>
+                    </div>
+                    <span class="date">Oct 1 2021</span>
+                    <a href="#" class="link">
+                        <p>
+                            Will the pandemic fade into an ordinary disease like the flu? The world is watching Denmark for clues.
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <h4>
+            <a href="#" class="link">VIEW MORE ></a>
+        </h4>
+    </div>
+
+    <div class="container-xxl" id="mostRead">
+        <h2>
+            MOST READ
+        </h2>
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="mostReadNews">
+                    <h3>
+                        1
+                    </h3>
+                    <a href="#" class="link">
+                        Apple's new silicons are set to be the new standard for ARM chips. With their powerful M1 family chipsets, will Intel and AMD be able to compete with the company?
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="mostReadNews">
+                    <h3>
+                        2
+                    </h3>
+                    <a href="#" class="link">
+                        Intel announced their 12th-generation Intel Core processor, the i5, i7 and i9, beating AMD's latest flagship desktop processors.
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="mostReadNews">
+                    <h3>
+                        3
+                    </h3>
+                    <a href="#" class="link">
+                        The quick brown fox jumps over the lazy dog.
+                        The quick brown fox jumps over the lazy dog.
+                        The quick brown fox jumps over the lazy dog.
+                        The quick brown fox jumps over the lazy dog.
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="mostReadNews" id="lineRemover">
+                    <h3>
+                        4
+                    </h3>
+                    <a href="#" class="link">
+                        The quick brown fox jumps over the lazy dog.
+                        The quick brown fox jumps over the lazy dog.
+                        The quick brown fox jumps over the lazy dog.
+                    </a>
+                </div>
+            </div>
+        </div>
+        <h4>
+            <a href="#" class="link">VIEW MORE ></a>
+        </h4>
+    </div>
+
+    <div class="container-xxl" id="globalNews&ad">
+        <div class="row">
+            <div class="col-lg-8 col-md-6">
+                <div id="globalNews">
+                    <h2>
+                        GLOBAL NEWS
+                    </h2>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="newsBoxMini">
+                                <div class="newsImg">
+                                    <img src="IMG/banner-coronavirus.png" class="backgroundimg_still" alt="covid-19-banner"/>
+                                </div>
+                                <span class="date">Oct 1 2021</span>
+                                <a href="#" class="link">
+                                    <p>
+                                        Situation of Covid-19 continues to deteriorate in countries like India, the UK, and the US.
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="newsBoxMini">
+                                <div class="newsImg">
+                                    <img src="IMG/d41586-021-02606-3_19690302.jpg" class="backgroundimg_still" alt="microsoft purchase carbon neutrolization machine"/>
+                                </div>
+                                <span class="date">Oct 1 2021</span>
+                                <a href="#" class="link">
+                                    <p>
+                                        Microsoft’s million-tonne CO2-removal purchase — lessons for net zero.
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="newsBoxMini">
+                                <div class="newsImg">
+                                    <img src="IMG/cyclones.jpg" class="backgroundimg_still" alt="cyclones"/>
+                                </div>
+                                <span class="date">Oct 1 2021</span>
+                                <a href="#" class="link">
+                                    <p>
+                                        Delayed global warming could reduce human exposure to cyclones.
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="newsBoxMini">
+                                <div class="newsImg">
+                                    <img src="IMG/_20211001_on_molnupiravirlinky.jpg" class="backgroundimg_still" alt="Antiviral pill"/>
+                                </div>
+                                <span class="date">Oct 1 2021</span>
+                                <a href="#" class="link">
+                                    <p>
+                                        ‘Unquestionably a game changer!’ Antiviral pill cuts COVID-19 hospitalization risk.
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div id="adv">
+                    <h5>ADVERTISEMENT</h5>
+                    <a href="https://1896.swjtuer.cn/" target="_blank">
+                        <img src="IMG/ad.png" class="backgroundimg_still" alt="ad" />
+                    </a>
+                    <p>
+                        Enjoy magnificent and stunning views of the world with a team of photography pros from Southwest Jiaotong University.
+                    </p>
+                    <a href="https://1896.swjtuer.cn/" target="_blank">
+                        <button>
+                            Learn More
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footerline">
+        <br />
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+            <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+        </svg>
+        All news and news images in this webpage source from: 
+        <a href="https://www.science.org" class="link" name="reference" target="_blank">www.science.org</a> 
+        , <a href="https://www.who.int" class="link" name="reference" target="_blank">www.who.int</a> 
+        and <a href="https://www.nature.com" class="link" name="reference" target="_blank">www.nature.com</a>
+        <br /><br />
+    </div>
+
+    <div class="container-fluid" id="logoBar">
+        <img src="IMG/footerlogo.png" id="osl_logo" />
+    </div>
+
+    <div class="footer__sitemap" id="footer">
+
+        <div id="footernav">
+            <div class="navblock">
+                <ul>
+                    <li>
+                        <div class="title_underline">
+                            <h3>
+                                Home
+                            </h3>
+                            <div class="title_underline_2"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="index.html#news" class="link_1">
+                            News of This Week
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#books" class="link_1">
+                            Booklist of This Week
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#journals" class="link_1">
+                            Journal list of This Week
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navblock">
+                <ul>
+                    <li>
+                        <div class="title_underline">
+                            <h3>
+                                News
+                            </h3>
+                            <div class="title_underline_2"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="news.html#globe" class="link_1">
+                            Around the Globe
+                        </a>
+                    </li>
+                    <li>
+                        <a href="news.html#academia" class="link_1">
+                            This Week in Academia
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navblock">
+                <ul>
+                    <li>
+                        <div class="title_underline">
+                            <h3>
+                                Search
+                            </h3>
+                            <div class="title_underline_2"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="search.html#search1" class="link_1">
+                            Search Library
+                        </a>
+                    </li>
+                    <li>
+                        <a href="search.html#hot" class="link_1">
+                            Hottest Requests
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navblock">
+                <ul>
+                    <li>
+                        <div class="title_underline">
+                            <h3>
+                                Library
+                            </h3>
+                            <div class="title_underline_2"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="library.html#basket" class="link_1">
+                            My Basket
+                        </a>
+                    </li>
+                    <li>
+                        <a href="library.html#read" class="link_1">
+                            Read Area
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navblock">
+                <ul>
+                    <li>
+                        <div class="title_underline">
+                            <h3>
+                                Account
+                            </h3>
+                            <div class="title_underline_2"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="account.html" class="link_1">
+                            Login
+                        </a>
+                    </li>
+                    <li>
+                        <a href="register.html" class="link_1">
+                            Register
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="info">
+            <br />
+            <img src="IMG/footerquaestio.png" width="150px" title="Quaestio" alt="Quaestio" />
+            <br />
+            <br />
+            <a href="about.html" class="link_1">About Us</a> / Go to : <a href="https://47.96.82.146" class="link_2" target="_blank">Quaestio</a>
+            <br />
+            This website is a non-commercial product of Quaestio. 
+            Created by Yuelin Xin, Some Rights Reserved. 
+            Inspired by the work of <a href="https://www.science.org" target="_blank">Science | AAAS</a>. 
+            Powered by <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>.
+            <br />
+            &copy;
+            <span id="quaestio">
+                Quaestio Studio
+            </span>
+            2021
+            <br />
+            <br />
+            <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a> | <a href="#">Accessibility</a>
+            <div id="icon_box">
+                <br />
+                <span>Follow Us</span>
+                <br />
+                <a href="https://github.com/YuelinXin" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                </a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-reddit" viewBox="0 0 16 16">
+                    <path d="M6.167 8a.831.831 0 0 0-.83.83c0 .459.372.84.83.831a.831.831 0 0 0 0-1.661zm1.843 3.647c.315 0 1.403-.038 1.976-.611a.232.232 0 0 0 0-.306.213.213 0 0 0-.306 0c-.353.363-1.126.487-1.67.487-.545 0-1.308-.124-1.671-.487a.213.213 0 0 0-.306 0 .213.213 0 0 0 0 .306c.564.563 1.652.61 1.977.61zm.992-2.807c0 .458.373.83.831.83.458 0 .83-.381.83-.83a.831.831 0 0 0-1.66 0z"/>
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.828-1.165c-.315 0-.602.124-.812.325-.801-.573-1.9-.945-3.121-.993l.534-2.501 1.738.372a.83.83 0 1 0 .83-.869.83.83 0 0 0-.744.468l-1.938-.41a.203.203 0 0 0-.153.028.186.186 0 0 0-.086.134l-.592 2.788c-1.24.038-2.358.41-3.17.992-.21-.2-.496-.324-.81-.324a1.163 1.163 0 0 0-.478 2.224c-.02.115-.029.23-.029.353 0 1.795 2.091 3.256 4.669 3.256 2.577 0 4.668-1.451 4.668-3.256 0-.114-.01-.238-.029-.353.401-.181.688-.592.688-1.069 0-.65-.525-1.165-1.165-1.165z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"/>
+                </svg>
+                <br /><br /><br />
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
+
+<!-- All news and news images in this webpage source from: www.science.org , www.who.int and www.nature.com -->
