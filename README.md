@@ -5,4 +5,4 @@ we want to provide free and stressless access to academic journals and materials
 
 This version is still building, this is only the skeleton of the front-end, more updates will come later.  
 
-The website is now available at www.osl.ink
+The website is now available at [osl.ink](https://www.osl.ink)
