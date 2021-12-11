@@ -249,7 +249,7 @@ h3
     left: 60px;
     overflow: hidden;
     position: absolute;
-    top: 10px;
+    top: 11px;
     transition: width 0.3s ease-in-out;
     width: 0px;
 }
@@ -257,15 +257,17 @@ h3
 #miniSearch
 {
     background-color: transparent;
-    border: 2px solid rgb(160, 160, 160);
+    border: 1px solid rgb(160, 160, 160);
     border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
     padding-left: 5px;
     width: 175px;
 }
 
 #miniSearch:focus
 {
-    outline-color: #666666;
+    border: 1px solid #666666;
 }
 
 #light
@@ -1128,7 +1130,7 @@ h3
 
 #titleNewsBox
 {
-    height: 520px;
+    height: calc(100vh - 215px);
     margin-top: 30px;
     overflow: hidden;
     padding: 0px;
@@ -1554,7 +1556,7 @@ h3
 
 #searchContainer
 {
-    height: 520px;
+    height: calc(100vh - 215px);
     justify-content: center;
     margin-top: 30px;
     overflow: hidden;
@@ -1599,7 +1601,7 @@ h3
 
 #searchBox
 {
-    bottom: 280px;
+    bottom: 55%;
     height: fit-content;
     position: relative;
     width: 100%;
