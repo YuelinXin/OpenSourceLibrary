@@ -9,4 +9,4 @@ A meme that tells you the current status of this project:
 
 ![front-end hero, back-end zero](http://staticfile.osl.ink/staticFiles/meme1.jpg)
 
-> The website is now available at [osl.ink](https://www.osl.ink)
+> The website is available at [osl.ink](https://www.osl.ink)
