@@ -14,21 +14,25 @@ window.onscroll = function()
     }
     else
     {
-        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        scrollTop = parseInt(scrollTop);
-        console.log(scrollTop);
-        if(scrollTop > 150)
+        try
         {
-            window.setTimeout(function(){goBlack();},100);
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            scrollTop = parseInt(scrollTop);
+            // console.log(scrollTop);
+            if(scrollTop > 150)
+            {
+                window.setTimeout(function(){goBlack();},100);
+            }
+            else
+            {
+                window.setTimeout(function(){goWhite();},100);
+            }
+            if (document.body.clientWidth < 868)
+            {
+                hide_navpage_onscroll();
+            }
         }
-        else
-        {
-            window.setTimeout(function(){goWhite();},100);
-        }
-        if (document.body.clientWidth < 868)
-        {
-            hide_navpage_onscroll();
-        }
+        catch(err){}
     }
 }
 function goBlack()

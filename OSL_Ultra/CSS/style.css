@@ -2642,23 +2642,34 @@ section span svg:hover
 
 #aboutBody
 {
-    /* background-image: linear-gradient(to top, rgba(0,0,0,0.4), white); */
-    background-color: rgba(0, 0, 0, 0.1);
-    height: calc(100vh - 24px);
+    background-color: #262626;
+    color: grey;
+    justify-content: center;
     text-align: center;
+    z-index: 0;
 }
 
 #aboutBody p
 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding-left: 50px;
     padding-right: 50px;
+    z-index: 99 !important;
 }
 
 #colorfulText
 {
-    background-image: url("../IMG/covid-banner.jpg");
-    background-size: cover;
-    background-position: 50% 50%;
+    animation: 6.0s movement linear infinite;
+    background-color: #cde6b1;
+    background-image: 
+    radial-gradient(closest-side, rgb(149, 194, 128), rgba(235, 105, 78, 0)),
+    radial-gradient(closest-side, rgb(176, 227, 243), rgba(243, 100, 100, 0)),
+    radial-gradient(closest-side, rgb(219, 230, 157), rgba(254, 234, 131, 0)),
+    radial-gradient(closest-side, rgb(206, 122, 255), rgba(170, 142, 245, 0)),
+    radial-gradient(closest-side, rgb(252, 180, 121), rgba(248, 192, 147, 0));
+    background-size: 130vmax 130vmax, 80vmax 80vmax, 90vmax 90vmax, 110vmax 110vmax, 90vmax 90vmax;
+    background-position: -80vmax -80vmax, 60vmax -30vmax, 10vmax 10vmax, -30vmax -10vmax, 50vmax 50vmax;
+    background-repeat: no-repeat;
     background-clip: text;
     color: transparent;
     font-size: 180px;
@@ -2674,9 +2685,43 @@ section span svg:hover
 {
     font-family: Sofia;
     font-weight: 700;
-    font-size: 180px;
+    font-size: 150px;
     height: 200px;
     line-height: 200px;
+}
+
+#circleContainer
+{
+    height: 80vh;
+    overflow: hidden;
+    width: 100vw;
+    position: absolute;
+}
+
+#circle
+{
+    background-color: rgb(230, 230, 230);
+    border: 1px grey solid;
+    border-radius: 160vw;
+    height: 300vw;
+    left: -100vw;
+    position: absolute;
+    text-align: center;
+    width: 300vw;
+    z-index: 1;
+}
+
+#contentp
+{
+    height: fit-content;
+    position: absolute;
+    width: 100%;
+    z-index: 99;
+}
+
+#p1
+{
+    margin-top: 80px;
 }
 
 #vline
@@ -2706,5 +2751,10 @@ section span svg:hover
         font-size: 70px;
         height: 80px;
         line-height: 80px;
+    }
+
+    #circleContainer
+    {
+        height: 120vh;
     }
 }
