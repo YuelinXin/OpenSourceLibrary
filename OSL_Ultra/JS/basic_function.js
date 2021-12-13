@@ -16,7 +16,7 @@ window.onscroll = function()
     {
         var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
         scrollTop = parseInt(scrollTop);
-        // console.log(scrollTop);
+        console.log(scrollTop);
         if(scrollTop > 150)
         {
             window.setTimeout(function(){goBlack();},100);

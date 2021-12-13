@@ -1150,9 +1150,9 @@ h3
 #blackCover
 {
     background-image: linear-gradient(to top, black, transparent);
-    bottom: 330px;
+    bottom: calc((100vh - 215px) / 1.5);
     color: white;
-    height: 330px;
+    height: calc((100vh - 215px) / 1.5);
     overflow: hidden;
     position: relative;
     text-align: center;
@@ -1522,6 +1522,11 @@ h3
 
 @media screen and (max-width: 868px)
 {
+    #titleNewsBox
+    {
+        height: calc(100vh - 152px);
+    }
+
     #titleNewsBox p
     {
         padding: 20px;
@@ -1529,7 +1534,7 @@ h3
 
     #titleNewsBox img
     {
-        height: 520px;
+        height: calc(100vh - 153px);
     }
 
     #featureNews .newsBox
@@ -2072,6 +2077,11 @@ section span svg:hover
     #rz
     {
         height: 75vh;
+    }
+
+    .h2_2
+    {
+        font-size: 25px;
     }
 
     #alternative_text_box
@@ -2621,5 +2631,80 @@ section span svg:hover
     #mobileSwitch h5
     {
         font-size: 18px;
+    }
+}
+
+
+
+
+
+/* about */
+
+#aboutBody
+{
+    /* background-image: linear-gradient(to top, rgba(0,0,0,0.4), white); */
+    background-color: rgba(0, 0, 0, 0.1);
+    height: calc(100vh - 24px);
+    text-align: center;
+}
+
+#aboutBody p
+{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#colorfulText
+{
+    background-image: url("../IMG/covid-banner.jpg");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-clip: text;
+    color: transparent;
+    font-size: 180px;
+    height: 200px;
+    line-height: 200px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    -webkit-background-clip: text;
+}
+
+#colorfulText h1
+{
+    font-family: Sofia;
+    font-weight: 700;
+    font-size: 180px;
+    height: 200px;
+    line-height: 200px;
+}
+
+#vline
+{
+    color: rgb(177, 177, 177);
+    display: inline-flex;
+    font-size: 30px;
+    font-weight: 100;
+    line-height: 40px;
+}
+
+@media screen and (max-width: 968px)
+{
+    #aboutBody p
+    {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #colorfulText
+    {
+        height: 80px;
+    }
+
+    #colorfulText h1
+    {
+        font-size: 70px;
+        height: 80px;
+        line-height: 80px;
     }
 }
